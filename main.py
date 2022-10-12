@@ -14,10 +14,12 @@ def move(group:str, destination:str) -> None:
     pass
 
 def checks(group:str)->None:
-    group_shell = subprocess.run('groups', capture_output=True)
-    group_list = group_shell.stdout.decode().replace("\n", "").split(" ") # The output is in bytes, so we decode it, clean it and split it
+    # TODO: Sanitize group to avoid injection
 
-    if group not in group_list:
+    group_shell = subprocess.run(f'getent group | grep -w {group}', shell=True, capture_output=True)
+    group_list = group_shell.stdout.decode() # The output is in bytes, so we decode it, clean it and split it
+
+    if group_list=='':
         raise Exception("Input group is not an existing group of the system. Please check it is correctly written")
     
 
