@@ -2,7 +2,7 @@ import subprocess
 import argparse
 import tempfile
 import shutil
-import os
+from datetime import datetime
 import tarfile
 
 parser = argparse.ArgumentParser()
@@ -21,13 +21,14 @@ def move(group:str, destination:str) -> None:
     print(group_files_list)
     
     with tempfile.TemporaryDirectory() as tmpdir: # We will archive the files to a temp folder to avoid external interference
-        with tarfile.open(f'{tmpdir}/{group}.tar', mode='a') as tar:
+        tar_filename = f'{tmpdir}/{group}-{datetime.now().strftime("%d%m%Y-%H%M%S")}.tar' # in order to provide robustness and avoid collisions, the tar file has the group and the exact datetime timestamp
+        with tarfile.open(tar_filename, mode='a') as tar: 
             for file in group_files_list:
                 tar.add(file, arcname=file.split(r'/')[-1]) # This only works in UNIX systems (a.k.a. not Windows)
-        shutil.move(f"{tmpdir}/{group}.tar", destination)
+        shutil.move(tar_filename, destination)
 
 
-def checks(group:str)->None:
+def checks(group:str, destination:str)->None:
     # TODO: Sanitize group to avoid injection
 
     group_shell = subprocess.run(f'getent group | grep -w {group}', shell=True, capture_output=True)
@@ -37,5 +38,5 @@ def checks(group:str)->None:
         raise Exception("Input group is not an existing group of the system. Please check it is correctly written")
 
 if __name__ == "__main__":
-    checks(group=group)
+    checks(group=group, destination=destination)
     move(group=group, destination=destination)
