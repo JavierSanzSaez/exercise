@@ -50,6 +50,8 @@ def checks(group:str, destination:str)->None:
     
     logging.info('Checks passed: All good')
 
-if __name__ == "__main__":
+def main():
+    logging.info("Preparing to copy files...")
     checks(group=group, destination=destination)
     move(group=group, destination=destination)
+    logging.info("Unimover completed successfully!")
