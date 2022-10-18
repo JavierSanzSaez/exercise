@@ -1,15 +1,15 @@
-2022-10-12 09:47:35,802 - DEBUG -Parameters checked: group: exercisetest, destination:/home/yildirim/exercise
+2022-10-12 09:47:35,802 - DEBUG -Parameters checked: group: exercisetest, destination:/home/test/exercise
 2022-10-12 09:47:35,804 - DEBUG -Checks passed: All good
 2022-10-12 09:47:35,806 - DEBUG -Creating temp folder at /tmp/tmplij38kip
 2022-10-12 09:47:35,807 - INFO -Tar file at /tmp/tmplij38kip/exercisetest-12102022-094735.tar created succesfully
 2022-10-12 09:47:35,807 - INFO -Tar file moved succesfully
-2022-10-12 09:48:38,983 - DEBUG -Parameters checked: group: exercisetest, destination:/home/yildirim/exercise
+2022-10-12 09:48:38,983 - DEBUG -Parameters checked: group: exercisetest, destination:/home/test/exercise
 2022-10-12 09:48:38,985 - INFO -Checks passed: All good
 2022-10-12 09:48:38,988 - DEBUG -Creating temp folder at /tmp/tmpgt9hgrkm
 2022-10-12 09:48:38,988 - DEBUG -Tar file at /tmp/tmpgt9hgrkm/exercisetest-12102022-094838.tar created succesfully
 2022-10-12 09:48:38,989 - DEBUG -Tar file moved succesfully
-2022-10-12 09:48:38,989 - INFO -Files moved successfully to folder /home/yildirim/exercise
-2022-10-12 09:49:12,048 - DEBUG -Parameters checked: group: exerciset, destination:/home/yildirim/exercise
+2022-10-12 09:48:38,989 - INFO -Files moved successfully to folder /home/test/exercise
+2022-10-12 09:49:12,048 - DEBUG -Parameters checked: group: exerciset, destination:/home/test/exercise
 2022-10-12 09:49:12,050 - WARNING -Input group exerciset is not an existing group of the system. Please check it is correctly written
-2022-10-12 09:49:33,858 - DEBUG -Parameters checked: group: exerciset, destination:/home/yildirim/exercise
+2022-10-12 09:49:33,858 - DEBUG -Parameters checked: group: exerciset, destination:/home/test/exercise
 2022-10-12 09:49:33,860 - WARNING -Input group "exerciset" is not an existing group of the system. Please check it is correctly written
