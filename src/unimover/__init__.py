@@ -39,7 +39,6 @@ def move(group:str, destination:str) -> None:
 
 def checks(group:str, destination:str)->None:
     logging.debug(f'Parameters checked: group: {group}, destination:{destination}')
-    # TODO: Sanitize group to avoid injection
 
     group_shell = subprocess.run(f'getent group | grep -w {group}', shell=True, capture_output=True)
     group_list = group_shell.stdout.decode() # The output is in bytes, so we decode it, clean it and split it
