@@ -18,7 +18,7 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s -%(message)s', filename=
 
 def move(group:str, destination:str) -> None:
     # First we need to locate all files from the group
-    group_files = subprocess.run(f'find $HOME/exercise -group {group}', shell=True, capture_output=True)
+    group_files = subprocess.run(f'find / -group {group}', shell=True, capture_output=True)
     group_files_list = group_files.stdout.decode().split("\n")[:-1] # The last element is empty
     
     with tempfile.TemporaryDirectory() as tmpdir: # We will archive the files to a temp folder to avoid external interference
